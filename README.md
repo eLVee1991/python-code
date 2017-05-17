@@ -8,3 +8,4 @@ Working on the following projects:
 - Dos attack (GET reguests)
 - Dos attack (threading connections)
 - A tool to autodelete all .txt files on a certain dir.
+- Auto Mac Scan (Scanning Avast, Malware Bytes and KnockKnock. Auto clicking all the buttons and saving log files to current dir.)
