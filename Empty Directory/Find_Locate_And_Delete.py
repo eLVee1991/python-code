@@ -65,6 +65,8 @@ def Find_And_Check():
 		print(directories)
 		for filelist in glob.glob(directories+"*.txt"):
 			print(filelist)
+			with open("Output_file.txt", "a") as textfile:
+				textfile.write(filelist+"\n")
 			#uncomment this part to not only print but delete.
 			#os.remove(filelist)
 			#print("removed ", filelist)
