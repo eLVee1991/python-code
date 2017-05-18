@@ -46,14 +46,17 @@ all files in all the folders??
 
 def Find_And_Check():
 	print("Searching for files..")
+	#Optional command instead of find: 
+	#You can find the content of all files.
+	#grep -Ril "text-to-find-here" /
 	proc=subprocess.Popen('find / -type f -name "*.*"', shell=True, stdout=subprocess.PIPE, )
 	output=proc.communicate()[0]
 	with open("FindCommand_Output_file.txt", "a") as textfile:
 		textfile.write("Found the following files on the system..: "+"\n\n")
 		textfile.write(output+"\n")
-			#uncomment this part to not only print but delete.
-			#os.remove(filelist)
-			#print("removed ", filelist)
+		#uncomment this part to not only print but delete.
+		#os.remove(filelist)
+		#print("removed ", filelist)
 	print(singlehash)
 
 Text()
