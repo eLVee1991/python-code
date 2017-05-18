@@ -45,7 +45,7 @@ folder_list = [
 def Question():
 	while True:
 		check = raw_input('''Want to permanently delete
-all .txt in all the folders??
+all files in all the folders??
 (Y)es or (N)o: ''')
 		if check == "Y":
 			Find_And_Check()
@@ -62,9 +62,9 @@ all .txt in all the folders??
 def Find_And_Check():
 	print("Searching for files..")
 	for directories in folder_list:
-		print(directories)
-		for filelist in glob.glob(directories+"*.txt"):
-			print(filelist)
+		print("Scanning the following directories: ", directories)
+		for filelist in glob.glob(directories+"*.*"):
+			print("Found: ", filelist)
 			with open("GlobCommand_Output_file.txt", "a") as textfile:
 				textfile.write(filelist+"\n")
 			#uncomment this part to not only print but delete.

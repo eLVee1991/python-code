@@ -21,17 +21,17 @@ def Text():
 |______|   |_____|     \__/       |______|   |______|
 
 
-This program will delete all .txt files on in all the
-the folders up to the 10th subfolder. Use with care! 
-For safety this code will only print the outputs.
-Please uncomment the "os.remove(filelist), to activate."
+This program will delete all the files on in all the
+the folders. Use with care! For safety this code will 
+only print the outputs. Please uncomment the 
+"os.remove(filelist), to activate."
 ''')
     print(doublehash)
 
 def Question():
 	while True:
 		check = raw_input('''Want to permanently delete
-all .txt in all the folders??
+all files in all the folders??
 (Y)es or (N)o: ''')
 		if check == "Y":
 			Find_And_Check()
@@ -46,9 +46,10 @@ all .txt in all the folders??
 
 def Find_And_Check():
 	print("Searching for files..")
-	proc=subprocess.Popen('find / -type f -name "*.txt"', shell=True, stdout=subprocess.PIPE, )
+	proc=subprocess.Popen('find / -type f -name "*.*"', shell=True, stdout=subprocess.PIPE, )
 	output=proc.communicate()[0]
 	with open("FindCommand_Output_file.txt", "a") as textfile:
+		textfile.write("Found the following files on the system..: "+"\n\n")
 		textfile.write(output+"\n")
 			#uncomment this part to not only print but delete.
 			#os.remove(filelist)
