@@ -62,9 +62,9 @@ all files in all the folders??
 def Find_And_Check():
 	print("Searching for files..")
 	for directories in folder_list:
-		print("Scanning the following directories: ", directories)
+		print "Scanning the following directories: ", directories
 		for filelist in glob.glob(directories+"*.*"):
-			print("Found: ", filelist)
+			print "Found: ", filelist
 			with open("GlobCommand_Output_file.txt", "a") as textfile:
 				textfile.write(filelist+"\n")
 			#uncomment this part to not only print but delete.
