@@ -15,16 +15,7 @@ doublehash = '''
 
 # a list that needs to be callable globally
 directory = ("/media/elvee/FILES/LINUX/Klaas/")
-directory2 = ("/media/elvee/FILES/Klaas/")
-directory3 = ("/media/FILES/Klaas/")
-directory4 = ("/media/FILES/LINUX/Klaas/")
 
-list_of_all_dir =[
-"directory = /media/elvee/FILES/Klaas/",
-"directory2 = /media/elvee/FILES/LINUX/Klaas/",
-"directory3 = /media/FILES/Klaas/",
-"directory4 = /media/FILES/LINUX/Klaas/" 
-]
 
 def Text():
     print(doublehash)    

@@ -2,10 +2,7 @@
 
 # To use this script you need to open up a terminal. cd to the folder
 # where the file is located. 
-# enter the following: python3 auto_install_modules_with_subprocess(finished).py
-
-### Nog kijken naar def question_2(). Deze wordt standaart nog opgeroepen nadat je
-### de append module hebt gebruikt. Dit moet niet. Hij moet terug gaan naar de vraag.
+# enter the following: python3 auto_install_modules.py
 
 import subprocess
 import time
