@@ -11,8 +11,8 @@ doublehash = '''
 '''
 
 def Text():
-    print(doublehash)    
-    print('''
+	print(doublehash)
+	print('''
  ______     _      __        __    ______     ______ 
 |  ____|   | |     \ \      / /   |  ____|   |  ____|
 | |____    | |      \ \    / /    | |____    | |____ 
@@ -26,7 +26,7 @@ the folders. Use with care! For safety this code will
 only print the outputs. Please uncomment the 
 "os.remove(filelist), to activate."
 ''')
-    print(doublehash)
+	print(doublehash)
 
 def Question():
 	while True:
