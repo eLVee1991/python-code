@@ -1,5 +1,5 @@
-import glob
 import os
+import subprocess
 
 # hashes to be used in most print statements to sort te code in the terminal.
 singlehash = '''
@@ -28,20 +28,6 @@ Please uncomment the "os.remove(filelist), to activate."
 ''')
     print(doublehash)
 
-
-folder_list = [
-"/*/",
-"/*/*/",
-"/*/*/*/",
-"/*/*/*/*/",
-"/*/*/*/*/*/",
-"/*/*/*/*/*/*/",
-"/*/*/*/*/*/*/*/",
-"/*/*/*/*/*/*/*/*/",
-"/*/*/*/*/*/*/*/*/*/",
-"/*/*/*/*/*/*/*/*/*/*/"
-]
-
 def Question():
 	while True:
 		check = raw_input('''Want to permanently delete
@@ -49,7 +35,6 @@ all .txt in all the folders??
 (Y)es or (N)o: ''')
 		if check == "Y":
 			Find_And_Check()
-			print(doublehash)
 			exit()
 		elif check == "N":
 			print("Not deleted.")
@@ -61,16 +46,14 @@ all .txt in all the folders??
 
 def Find_And_Check():
 	print("Searching for files..")
-	for directories in folder_list:
-		print(directories)
-		for filelist in glob.glob(directories+"*.txt"):
-			print(filelist)
-			with open("Output_file.txt", "a") as textfile:
-				textfile.write(filelist+"\n")
+	proc=subprocess.Popen('find / -type f -name "*.txt"', shell=True, stdout=subprocess.PIPE, )
+	output=proc.communicate()[0]
+	with open("FindCommand_Output_file.txt", "a") as textfile:
+		textfile.write(output+"\n")
 			#uncomment this part to not only print but delete.
 			#os.remove(filelist)
 			#print("removed ", filelist)
-		print(singlehash)
+	print(singlehash)
 
 Text()
 Question()
